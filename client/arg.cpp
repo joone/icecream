@@ -826,6 +826,27 @@ bool analyse_argv(const char * const *argv, CompileJob &job, bool icerun, list<s
             }
         }
 
+        if (ifile.find("skia") != string::npos)
+          always_local = true;
+        else if (ifile.find("webrtc") != string::npos)
+          always_local = true;
+        else if (ifile.find("libaom") != string::npos)
+          always_local = true;
+        else if (ifile.find("libwebp") != string::npos)
+          always_local = true;
+        else if (ifile.find("libvpx") != string::npos)
+          always_local = true;
+        else if (ifile.find("libpng") != string::npos)
+          always_local = true;
+        else if (ifile.find("zlib") != string::npos)
+          always_local = true;
+        else if (ifile.find("angle") != string::npos)
+          always_local = true;
+        else if (ifile.find("raster") != string::npos)
+          always_local = true;
+        else if (ifile.find("gles2") != string::npos)
+          always_local = true;
+
     } else { // always_local
         job.setInputFile(string());
     }
